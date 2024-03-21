@@ -1,0 +1,46 @@
+{
+    "manifest_version": 3,
+    "name": "Boss Grifo",
+    "description": "Auxilia no tratamento do Grifo pelos chefes do MPT.",
+    "version": "0.1",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "contextMenus"
+    ],
+    "icons": {
+        "16": "images/Boss-Grifo-16.png",
+        "32": "images/Boss-Grifo-32.png",
+        "48": "images/Boss-Grifo-48.png",
+        "128": "images/Boss-Grifo-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://grifo.mpt.mp.br/grifo/frequencia/consultarFrequencia.action*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "scripts/popup.js"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/Boss-Grifo-16.png",
+            "32": "images/Boss-Grifo-32.png",
+            "48": "images/Boss-Grifo-48.png",
+            "128": "images/Boss-Grifo-128.png"
+        }
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+B",
+                "mac": "Command+B"
+            }
+        }
+    }
+}
